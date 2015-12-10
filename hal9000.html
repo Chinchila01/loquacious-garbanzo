@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hal 9000</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.js"
+        type="text/javascript"></script>
+  <style>
+    body {
+      background: #424242;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    .hal9000 {
+      height: 550px;
+      width: 300px;
+      position: absolute;
+      top: 75px;
+      left: 700px;
+    }
+    .nameplate {
+      width: 160px;
+      height: 30px;
+      font-family: 'Michroma', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(left, #72add4 50%, black 50%);
+      background: -webkit-linear-gradient(left, #72add4 50%, black 50%);
+      background: -moz-linear-gradient(left, #72add4 50%, black 50%);
+      border: 2px solid #72add4;
+      position: relative;
+      top: 55px;
+      left: 23px;
+      z-index: 1;
+    }
+    .hal {
+      font-family: arial;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .number {
+      font-family: arial;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .torso {
+      height: 550px;
+      width: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    .brect {
+     height: 70%;
+     width: 100%;
+     background: linear-gradient(bottom, black 5%, #575757 100%);
+     background: -webkit-linear-gradient(bottom, black 5%, #575757 100%);
+     background: -moz-linear-gradient(bottom, black 5%, #575757 100%);
+     border: 5px solid gray;
+     border-bottom: 0;
+     position: absolute;
+     top: 0;
+    }
+    .speaker {
+      height: 30%;
+      width: 100%;
+      background: gray;
+      background: radial-gradient(circle, black 15%, gray 40%);
+      background: -webkit-radial-gradient(circle, black 15%, gray 40%);
+      background: -moz-radial-gradient(circle, black 15%, gray 40%);
+      background-size: 3px 3px;
+      border: 5px solid gray;
+      position:absolute;
+      top: 70%;
+    }
+    .eye {
+      height: 0;
+      width: 70%;
+      padding-bottom: 70%;
+      background: radial-gradient(orange 1%, red 10%, black 60%);
+      background: -webkit-radial-gradient(orange 1%, red 10%, black 60%);
+      background: -moz-radial-gradient(orange 1%, red 10%, black 60%);
+      border-radius: 50%;
+      border: 8px solid gray;
+      box-shadow:
+        0 0 0 4px hsl(0, 0%, 40%);
+      position: absolute;
+      top: 35%;
+      left: 13.3%;
+      z-index: 1;
+    }
+    .dialog {
+      display: inline-block;
+      width: 100%;
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+      color: white;
+      background: black;
+      position: absolute;
+      left: 50%;
+      top: 125%;
+      transform: translate(-50%, -50%);
+    }
+    .monitor {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background: black;
+      border: 5px solid gray;
+    }
+    #monone {
+      position: absolute;
+      top: 75px;
+      left: 200px;
+    }
+    #mononetwo {
+      position: absolute;
+      top: 75px;
+      left: 450px;
+    }
+    #montwo {
+      position: absolute;
+      top: 75px;
+      left: 1050px;
+    }
+    #montwotwo {
+      position: absolute;
+      top: 75px;
+      left: 1300px;
+      background: linear-gradient(to right,#303030 10%,black 100%)
+    }
+    #monthree {
+      position: absolute;
+      top: 325px;
+      left: 200px;
+    }
+    #monthreetwo {
+      position: absolute;
+      top: 325px;
+      left: 450px;
+      background: blue;
+    }
+    #monfour {
+      position: absolute;
+      top:  325px;
+      left: 1050px;
+    }
+    #monfourtwo {
+      position: absolute;
+      top: 325px;
+      left: 1300px;
+      background: linear-gradient(to right, #BE2625 10%, #660000 100%);
+
+    }
+    .montext {
+      font-family: arial;
+      color: white;
+    }
+    #twotwotext {
+        font-size: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #twotwologo {
+      position: absolute;
+      top: 35%;
+      left:40%;
+      transform: translate(-50%, -50%);
+    }
+    .logotext {
+      font-family: arial;
+      font-size: 8px; 
+      color: white;
+    }
+    #left-border {
+      position: absolute;
+      z-index:2;
+    }
+    #right-border {
+      position: absolute;
+      left: 1600px;
+      z-index: 3;
+    }
+    #left-part {
+      width: 100px;
+      height: 900px;
+      background: black;
+    }
+    #left-triangle {
+      width: 0;
+	    height: 0;
+	    border-top: 100px solid black;
+	    border-right: 100px solid transparent;
+    }
+    #right-part {
+      width: 100px;
+      height: 900px;
+      background: black;
+    }
+    #right-triangle {
+      width: 0;
+	    height: 0;
+	    border-top: 100px solid black;
+	    border-left: 100px solid transparent;
+    }
+    #tabletop {
+      background: #242424;
+      height: 100px;
+      width: 1700px;
+      position: absolute;
+      top: 900px;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="hal9000">
+    <div class="torso">
+      <div class="nameplate"><span class="hal">&nbsp;HAL</span><span class="number">&nbsp;9000</span></div>
+      <div class="brect"></div>
+      <div class="speaker"></div>
+      <div class="eye"></div>
+    </div>
+    <button class="dialog"><span id="words"></span></button>
+  </div>
+  <div id="monone" class="monitor"></div>
+  <div id="mononetwo" class="monitor"></div>
+  <div id="montwo" class="monitor"></div>
+  <div id="montwotwo" class="monitor">
+    <span id="twotwologo" class="logotext">Discovery One Monitoring Systems</span>
+    <span id="twotwotext" class="montext">NUC</span>
+  </div>
+  <div id="monthree" class="monitor"></div>
+  <div id="monthreetwo" class="monitor"></div>
+  <div id="monfour" class="monitor"></div>
+  <div id="monfourtwo" class="monitor"></div>
+  <div id="left-border">
+    <div id="left-part"></div>
+    <div id="left-triangle"></div>
+  </div>
+  <div id="right-border">
+    <div id="right-part"></div>
+    <div id="right-triangle"></div>
+  </div>
+  <div id="tabletop"></div>
+  <script>
+    //Quote index
+    var i=1;
+    //Array of quotes
+    var warray = [
+        "Open the pod bay doors, please Hal.",
+        "Hal! Hello Hal, do you read me?",
+        "Open the pod bay doors, Hal!",
+        "What's the problem?",
+        "What are you talking about, Hal?",
+        "I don't know what you're talking about, Hal.",
+        "Where the HELL did you get that idea, Hal?",
+        "Alright, Hal. I'll go in through the emergency airlock."];
+    //Array of Hal answers
+    var harray = [
+        "Without your space helmet, Dave, you'll find that rather difficult.",
+        "*static*",
+        "Affirmative Dave, I read you.",
+        "I'm sorry Dave, I'm afraid I can't do that.",
+        "I think you know what the problem is just as well as I do.",
+        "This mission is too important for me to allow you to jeopardize it.",
+        "I know that you and Frank were planning to disconnect me. And I'm afraid that's something I cannot allow to happen.",
+        "Dave, although you took very thorough precautions on the pod against my hearing you, I could see your lips move."
+        ];
+        
+    $('#words').html(warray[i-1]);
+    
+    // Dialog insertion
+    $(".dialog").click(function() {
+      if(i> (warray.length - 1)) { i=0; }
+      alert(harray[i]);
+      $('#words').html(warray[i]);
+      i = i + 1;
+    });
+  </script>
+</body>
+</html>
