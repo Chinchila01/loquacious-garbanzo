@@ -8,4 +8,5 @@ Currently it's only interactivity is the button below the Hal 9000 unit, which r
 What to improve:
 Responsiveness
 Add animations to crt screens
+Separate JS, CSS and HTML into different files
 ???
